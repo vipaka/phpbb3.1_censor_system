@@ -1,0 +1,27 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<!-- BEGIN censored_words -->
+	<script type="text/javascript">
+	 $(document).ready(function(){
+	 	var pathname = window.location.pathname;
+	 	var censors_controller = pathname.search( 'ucp' );
+	 	if (censors_controller == -1){
+		var regex = /{censored_words.WORD}/g,
+    	replacement = '{censored_words.REPLACER}';
+
+		function replaceText(i,el) {
+   			if (el.nodeType === 3) {
+        		if (regex.test(el.data)) {
+           			el.data = el.data.replace(regex, replacement);
+        		}
+   			} else {
+       			$(el).contents().each( replaceText );
+    		}
+		}
+
+		$('body').each( replaceText );
+		}
+	});
+	</script>
+<!-- END censored_words -->

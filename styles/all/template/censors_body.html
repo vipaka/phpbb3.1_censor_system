@@ -1,0 +1,38 @@
+
+<!-- INCLUDE ucp_header.html -->
+<h2>{L_CENSORS}</h2>
+<div class="panel">
+<form method="post" id="censorship">
+  <fieldset>
+  {L_WORD}: <input type="text" name="wordage" value="" />
+  {L_REPLACEMENT}: <input type="text" name="replacer" value="" />
+  <input type="submit" name="submit" value="{L_SUBMIT}" />
+</fieldset>
+</form>
+
+<!-- IF HAS_CENSORS == 1 -->
+<table class="table1">
+  <thead>
+      <th>{L_WORD}</th>
+      <th>{L_REPLACEMENT}</th>
+      <th>{L_ACTION}</th>
+  </thead>
+<!-- BEGIN censor_words -->
+    <tr>
+      <td style="text-align: center;">{censor_words.WORD}</td>
+      <td style="text-align: center;"> {censor_words.REPLACER}</td>
+      <td style="text-align: center;"><form method="post" id="del_censor">
+        <fieldset>
+           <input type="hidden" name="delete" value="{censor_words.ID}" />
+           <input type="submit" name="del" value="{L_DELETE}" />
+        </fieldset>
+      </form></td>
+    </tr>
+<!-- END censor_words -->
+</table>
+<!-- ELSE -->
+<br /><br />
+    {L_NO_CURRENT_CENSORS}
+<!-- ENDIF --> 
+</div>
+<!-- INCLUDE ucp_footer.html -->

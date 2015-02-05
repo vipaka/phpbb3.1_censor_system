@@ -1,0 +1,11 @@
+services:
+    vipaka.censors.listener:
+        class: vipaka\censors\event\main_listener
+        arguments:
+            - @controller.helper
+            - @template
+            - @dbal.conn
+            - @config
+            - @config_text
+        tags:
+            - { name: event.listener }

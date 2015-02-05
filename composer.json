@@ -1,0 +1,27 @@
+{
+	"name": "vipaka/censors",
+	"type": "phpbb-extension",
+	"description": "Censors Extension for phpBB 3.1",
+	"homepage": "https://www.esmaerin.com/phpbb/censors.zip",
+	"version": "1.0.2",
+	"time": "2014-12-9",
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "Amelia Winstead",
+			"email": "ladyvipaka@yahoo.com",
+			"homepage": "www.esmaerin.com",
+			"role": "Lead Developer"
+		}],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "Censors Extension",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
+	}
+}
